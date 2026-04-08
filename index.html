@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cold Echo — 2D сюжетный платформер</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="fog"></div>
+    <div class="crystal-field" id="crystalField"></div>
+    <div class="alarm-overlay" id="alarmOverlay"></div>
+
+    <nav>
+        <a class="logo" href="#home">Cold<span> Echo</span></a>
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <ul id="navMenu">
+            <li><a href="#story">Сюжет</a></li>
+            <li><a href="#features">Локации</a></li>
+            <li><a href="#audio">Аудио</a></li>
+            <li><a href="#support">Поддержка</a></li>
+            <li><a href="#download">Демо</a></li>
+            <li><a href="https://web.telegram.org/k/#@Dblmotion" target="_blank" rel="noopener">Telegram</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="reveal">
+        <div class="badge">2D сюжетный платформер</div>
+        <h1>Cold Echo</h1>
+        <div class="release-tag">◆ Скоро релиз</div>
+        <p>
+            Исследуй заброшенную базу, добывай заражённые кристаллы и раскрывай тайны,
+            скрытые в замёрзших коридорах. Каждая найденная записка меняет твоё понимание происходящего.
+        </p>
+        <div class="cta-group">
+            <a class="btn-primary" href="#story">Узнать историю ↓</a>
+            <a class="btn-ghost" href="#download">Скачать демо</a>
+        </div>
+    </header>
+
+    <div style="max-width:1140px;margin:0 auto 0;padding:0 24px;position:relative;z-index:3">
+        <div class="stats-strip reveal">
+            <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Уникальных персонажа</div></div>
+            <div class="stat-item"><div class="stat-num">30+</div><div class="stat-label">Звуковых дорожек</div></div>
+            <div class="stat-item"><div class="stat-num">4</div><div class="stat-label">Комнаты</div></div>
+            <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">Атмосферные сцены</div></div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <section id="story" class="reveal">
+        <span class="section-label">Погружение</span>
+        <h2>Сюжет</h2>
+        <div class="story">
+            <div class="story-text">
+                <p>Ты начинаешь на поверхности мёртвой планеты. Под ногами — заражённые кристаллы, вдалеке — одинокий торговец, который знает больше, чем говорит.</p>
+                <p>Чтобы попасть внутрь базы, тебе предстоит добыть ключ-карту, торгуясь, исследуя окружение и находя забытые технологии.</p>
+                <p>Внутри тебя ждут тревоги, поломки, странные комнаты и враги, а также пасхалки — моменты, где игра замирает, позволяя тебе читать найденные записки и фрагменты прошлого.</p>
+            </div>
+            <div class="story-img">
+                <img src="baza.jpg" alt="Заброшенная база" onerror="this.src='https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=800'" />
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="features" class="reveal">
+        <span class="section-label">Геймплей</span>
+        <h2>Локации</h2>
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-image pixel pixel-crystals">
+                    <img src="img/tehotdel.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Лаборатория и Тех. Отсек</h3>
+                    <p>Место, где чистая наука столкнулась с грубым металлом. Стерильность верхних лабораторий давно пропиталась гарью и сыростью тех-отсека. Пока на верхних столах догнивают забытые образцы, внизу, среди гудящих терминалов, всё еще пульсируют ошибки в коде системы, заставляя свет мигать в предсмертном ритме.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/jilaya.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Жилая зона и Архив</h3>
+                    <p>Последнее пристанище экипажа, где быт переплелся с бюрократией. Вверху — пустые койки и нехитрая утварь, хранящие тепло ушедших жизней. Внизу — стройные ряды ящиков и пожелтевшие отчеты, хранящие их секреты. Теперь это лишь безмолвный памятник тем, кто когда-то называл эту базу домом.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/OOP.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Опорно-пропускной пункт</h3>
+                    <p>Граница между внешним хаосом и внутренним порядком, залитая тревожным неоном. Опорно-пропускной пункт больше не защищает — он лишь фиксирует следы того, что прорвалось внутрь. Сквозь фиолетовый туман видны очертания брошенных постов и странные наросты, намекающие: то, от чего здесь пытались отгородиться, уже давно стало частью самой базы.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/vhod.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Вход в базу и Камера очистки</h3>
+                    <p>Последний рубеж между мертвой планетой и убежищем. Холодный свет сканеров в камере очистки должен был смывать заразу, но теперь он лишь подчеркивает глубокие трещины в бронированных дверях. Этот шлюз когда-то дарил надежду на безопасность, но сегодня он кажется пастью огромного зверя, замершего в ожидании гостя.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/glavniy.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Главный вход в базу и Торговец</h3>
+                    <p>Безмолвие мертвой планеты прерывается лишь хрустом снега под тяжелыми сапогами. У входа в бетонную цитадель, среди вечной мерзлоты и редких елей, замер одинокий торговец. Это место — последняя точка относительного спокойствия, где за горсть найденных технологий можно выменять шанс на выживание перед тем, как навсегда исчезнуть в недрах базы.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/konec.jpg">
+                </div>
+                <div class="card-body">
+                    <h3>Конец карты и Другая сторона базы</h3>
+                    <p>Там, где бетонные стены базы сдаются под натиском вечного льда. Задний фасад — это тупик, занесенный снегом и озаренный призрачным сиянием неба. Холод здесь ощущается острее, а тишина становится давящей. Дальше только пустота мертвой планеты, и если база не впустит тебя сейчас, ты станешь лишь еще одним замерзшим фрагментом этого забытого мира.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="audio" class="reveal">
+    <span class="section-label">Саундтрек</span>
+    <h2>Аудио в игре</h2>
+
+    <div class="audio-list" id="audioList">
+
+        <!-- ПЛЕЕР 1 -->
+        <div class="audio-track" data-index="0">
+            <audio src="music/pause.mp3" preload="metadata"></audio>
+            <button class="play-btn" aria-label="Play">
+                <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none">
+                    <rect x="6" y="4" width="4" height="16"/>
+                    <rect x="14" y="4" width="4" height="16"/>
+                </svg>
+            </button>
+
+            <div class="track-info">
+                <div class="track-zone-inline">Пауза</div>
+                <div class="track-progress-wrap">
+                    <div class="track-bar"><div class="track-fill"></div></div>
+                    <div class="track-time">
+                        <span class="t-cur">0:00</span> /
+                        <span class="t-dur">—:——</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-vol">
+                <span class="vol-icon">🔊</span>
+                <input class="vol-slider" type="range" min="0" max="1" step="0.05" value="1">
+            </div>
+        </div>
+
+
+        <!-- ПЛЕЕР 2 -->
+        <div class="audio-track" data-index="1">
+            <audio src="music/music1.wav" preload="metadata"></audio>
+            <button class="play-btn" aria-label="Play">
+                <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none">
+                    <rect x="6" y="4" width="4" height="16"/>
+                    <rect x="14" y="4" width="4" height="16"/>
+                </svg>
+            </button>
+
+            <div class="track-info">
+                <div class="track-zone-inline">Музыка в игре №1</div>
+                <div class="track-progress-wrap">
+                    <div class="track-bar"><div class="track-fill"></div></div>
+                    <div class="track-time">
+                        <span class="t-cur">0:00</span> /
+                        <span class="t-dur">—:——</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-vol">
+                <span class="vol-icon">🔊</span>
+                <input class="vol-slider" type="range" min="0" max="1" step="0.05" value="1">
+            </div>
+        </div>
+
+
+        <!-- ПЛЕЕР 3 -->
+        <div class="audio-track" data-index="2">
+            <audio src="music/music2.mp3" preload="metadata"></audio>
+            <button class="play-btn" aria-label="Play">
+                <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none">
+                    <rect x="6" y="4" width="4" height="16"/>
+                    <rect x="14" y="4" width="4" height="16"/>
+                </svg>
+            </button>
+
+            <div class="track-info">
+                <div class="track-zone-inline">Музыка в игре №2</div>
+                <div class="track-progress-wrap">
+                    <div class="track-bar"><div class="track-fill"></div></div>
+                    <div class="track-time">
+                        <span class="t-cur">0:00</span> /
+                        <span class="t-dur">—:——</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-vol">
+                <span class="vol-icon">🔊</span>
+                <input class="vol-slider" type="range" min="0" max="1" step="0.05" value="1">
+            </div>
+        </div>
+
+
+        <!-- ПЛЕЕР 4 -->
+        <div class="audio-track" data-index="3">
+            <audio src="music/gul.mp3" preload="metadata"></audio>
+            <button class="play-btn" aria-label="Play">
+                <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none">
+                    <rect x="6" y="4" width="4" height="16"/>
+                    <rect x="14" y="4" width="4" height="16"/>
+                </svg>
+            </button>
+
+            <div class="track-info">
+                <div class="track-zone-inline">Гул под землей</div>
+                <div class="track-progress-wrap">
+                    <div class="track-bar"><div class="track-fill"></div></div>
+                    <div class="track-time">
+                        <span class="t-cur">0:00</span> /
+                        <span class="t-dur">—:——</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-vol">
+                <span class="vol-icon">🔊</span>
+                <input class="vol-slider" type="range" min="0" max="1" step="0.05" value="1">
+            </div>
+        </div>
+
+
+        <!-- ПЛЕЕР 5 -->
+        <div class="audio-track" data-index="4">
+            <audio src="music/beg.mp3" preload="metadata"></audio>
+            <button class="play-btn" aria-label="Play">
+                <svg class="icon-play" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none">
+                    <rect x="6" y="4" width="4" height="16"/>
+                    <rect x="14" y="4" width="4" height="16"/>
+                </svg>
+            </button>
+
+            <div class="track-info">
+                <div class="track-zone-inline">Звуки шагов</div>
+                <div class="track-progress-wrap">
+                    <div class="track-bar"><div class="track-fill"></div></div>
+                    <div class="track-time">
+                        <span class="t-cur">0:00</span> /
+                        <span class="t-dur">—:——</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-vol">
+                <span class="vol-icon">🔊</span>
+                <input class="vol-slider" type="range" min="0" max="1" step="0.05" value="1">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <section id="support" class="reveal">
+        <span class="section-label">Обратная связь</span>
+        <h2>Поддержка & Отзыв</h2>
+        <div class="support-wrap">
+            <div class="support-info">
+                <h3>Есть вопрос или нашёл баг?</h3>
+                <p>Напиши нам — мы читаем каждое сообщение. Твои отзывы напрямую влияют на развитие Cold Echo. Ты можешь оставить оценку, описать баг или просто поделиться впечатлением.</p>
+                <div class="support-links">
+                    <a class="support-link" href="https://web.telegram.org/k/#@Dblmotion" target="_blank" rel="noopener">
+                        <span class="support-link-icon">⋆</span>
+                        <div class="support-link-text">
+                            <strong>Telegram</strong>
+                            <span>@Dblmotion — быстрый ответ</span>
+                        </div>
+                    </a>
+                    <a class="support-link" href="#support">
+                        <span class="support-link-icon">⋆</span>
+                        <div class="support-link-text">
+                            <strong>Баг-репорт</strong>
+                            <span>Заполни форму справа</span>
+                        </div>
+                    </a>
+                    <a class="support-link" href="#support">
+                        <span class="support-link-icon">⋆</span>
+                        <div class="support-link-text">
+                            <strong>Оставить отзыв</strong>
+                            <span>Поделись впечатлением</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="form-box">
+                <div id="formContent">
+                    <h3>Написать нам</h3>
+                    <p>Баг, отзыв или идея — всё приветствуется</p>
+                    <div class="form-group">
+                        <label>Никнейм или имя</label>
+                        <input type="text" id="inputName" placeholder="Как тебя зовут?">
+                    </div>
+                    <div class="form-group">
+                        <label>Тип сообщения</label>
+                        <select id="inputType">
+                            <option value="">— Выбери тип —</option>
+                            <option value="review">Отзыв об игре</option>
+                            <option value="bug">Баг / ошибка</option>
+                            <option value="idea">Идея / предложение</option>
+                            <option value="question">Вопрос</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="ratingGroup" style="display:none">
+                        <label>Оценка</label>
+                        <div class="star-rating" id="starRating">
+                            <button class="star-btn" data-val="1">★</button>
+                            <button class="star-btn" data-val="2">★</button>
+                            <button class="star-btn" data-val="3">★</button>
+                            <button class="star-btn" data-val="4">★</button>
+                            <button class="star-btn" data-val="5">★</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Сообщение</label>
+                        <textarea id="inputMsg" placeholder="Опиши подробно…"></textarea>
+                    </div>
+                    <button class="form-submit" id="formSubmit">Отправить</button>
+                </div>
+                <div class="form-success" id="formSuccess">
+                    <div class="check">✓</div>
+                    <h4>Сообщение получено!</h4>
+                    <p>Спасибо за обратную связь — мы постараемся ответить как можно быстрее.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="download" class="reveal base-zone">
+        <span class="section-label">Попробуй сейчас</span>
+        <h2>Демо-версия</h2>
+        <div class="download-card">
+            <div>
+                <h3>Первые главы уже доступны</h3>
+                <p>Добыча кристаллов, торговец на поверхности и вход в заброшенную базу.</p>
+                <p>Тревоги, враги и первая остановка времени для чтения записок — всё уже внутри демо.</p>
+                <div class="cta-group" style="justify-content:flex-start;margin-top:28px">
+                    <a class="btn-primary" href="https://dblmok.itch.io/cold-echo" target="_blank" rel="noopener">Скачать демо</a>
+                    <a class="btn-ghost" href="https://web.telegram.org/k/#@Dblmotion" target="_blank" rel="noopener">Следить в Telegram</a>
+                </div>
+            </div>
+            <div class="download-img">
+                <img class="floating" src="img/cold.jpg" alt="Демо Cold Echo">
+            </div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <span class="footer-logo">Cold<span> Echo</span></span>
+        <nav class="footer-links">
+            <a href="#story">Сюжет</a>
+            <a href="#features">Особенности</a>
+            <a href="#support">Поддержка</a>
+            <a href="#download">Демо</a>
+            <a href="https://web.telegram.org/k/#@Dblmotion" target="_blank" rel="noopener">Telegram</a>
+        </nav>
+        <p class="footer-copy">© 2026 <strong>Cold Echo</strong> — Все права не защищены(</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
